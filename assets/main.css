@@ -22,7 +22,7 @@ body {
 .digital {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-bottom: 1em;
     padding: 0.5em;
@@ -86,7 +86,7 @@ button {
 }
 
 #reveal {
-    width: 60%;
+    width: 80%;
     margin-bottom: 1em;
 }
 
@@ -96,6 +96,7 @@ button {
     flex-direction: row;
     justify-content: space-between;
     margin: auto;
+    margin-bottom: 1em;
 }
 
 .work-details {
