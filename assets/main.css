@@ -27,7 +27,7 @@ body {
     margin-bottom: 1em;
     padding: 0.5em;
     border-radius: 12.5px;
-    background-color: #00800040;
+    background: radial-gradient(#00800030, #00800020);
 }
 
 a {
@@ -70,20 +70,24 @@ dialog {
 }
 
 #dialog-window {
-    background-color: #00800040;
+    background: radial-gradient(#00800030, #00800020);
     color: green;
     padding: 2em;
     border-radius: 12.5px;
 }
 
 button {
-    background-color: #00800040;
+    background: radial-gradient(#00800030, #00800020);
     color: green;
-    border-color: green;
+    border-color: #00800080;
     border-radius: 12.5px;
     font-family: VT323;
     font-size: 1.5em;
     margin: auto;
+}
+
+button:hover {
+    background: radial-gradient(#00800030, #00800040);
 }
 
 #reveal {
