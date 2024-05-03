@@ -59,15 +59,31 @@ h1, h2, h3, h4 {
     font-size: 1.5em;
 }
 
-#reveal {
+dialog {
+    background-color: black;
+    padding: 0%;
+    margin: auto;
+}
+
+#dialog-window {
+    background-color: #00800040;
+    color: green;
+    padding: 2em;
+    border-radius: 12.5px;
+}
+
+button {
     background-color: #00800040;
     color: green;
     border-color: green;
     border-radius: 12.5px;
     font-family: VT323;
     font-size: 1.5em;
-    width: 60%;
     margin: auto;
+}
+
+#reveal {
+    width: 60%;
     margin-bottom: 1em;
 }
 

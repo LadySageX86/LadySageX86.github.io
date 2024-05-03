@@ -1,6 +1,13 @@
+let revealed = false;
+
 const revealButton = document.getElementById("reveal");
+const dialog = document.getElementById('reveal-test');
+
 revealButton.addEventListener("click", e => {
-    if (confirm("TOTALLY SECURE HUMANITY CHECK!\nClick OK if you are not a bot!")) {
+    dialog.showModal();
+})
+
+const confirm = e => {
         const location = document.getElementById("location");
         location.innerText = "Fredericton, NB";
 
@@ -24,6 +31,15 @@ revealButton.addEventListener("click", e => {
         phoneLink.setAttribute("href", tel+country+area+region+num);
 
         revealButton.setAttribute("hidden", "true")
-    }
-    else return;
-})
+        dialog.close();
+}
+
+const rejectHumanity = e => {
+    dialog.close();
+}
+
+const confirm_button = document.getElementById("confirm");
+confirm_button.addEventListener("click", confirm);
+
+const rejectHumanity_button = document.getElementById("rejectHumanity");
+rejectHumanity_button.addEventListener("click", rejectHumanity);
