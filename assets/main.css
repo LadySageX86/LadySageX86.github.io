@@ -37,10 +37,13 @@ a {
 ul {
     list-style-type: square;
     list-style-position: inside;
+    margin: auto;
 }
 
 p, li {
     font-size: 1.25em;
+    margin: auto;
+    margin-bottom: 1em;
 }
 
 h1, h2, h3, h4 {
@@ -92,5 +95,10 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: auto;
+}
+
+.work-details {
+    margin-top: 1em;
     margin: auto;
 }
