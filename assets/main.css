@@ -1,0 +1,80 @@
+@font-face {
+    font-family: RubikMono;
+    src: url('fonts/RubikMonoOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: VT323;
+    src: url('fonts/VT323-Regular.ttf');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: green;
+    text-align: center;
+    justify-content: center;
+    font-family: VT323;
+    font-variant-ligatures: none;
+}
+
+.digital {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 12.5px;
+    background-color: #00800040;
+}
+
+a {
+    color: green;
+}
+
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+p, li {
+    font-size: 1.25em;
+}
+
+h1, h2, h3, h4 {
+    margin: auto;
+    font-family: RubikMono;
+    font-variant: small-caps;
+}
+
+#navbar {
+    flex-direction: row;
+    margin: auto;
+}
+
+.navlink {
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+#reveal {
+    background-color: #00800040;
+    color: green;
+    border-color: green;
+    border-radius: 12.5px;
+    font-family: VT323;
+    font-size: 1.5em;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.work-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+}
