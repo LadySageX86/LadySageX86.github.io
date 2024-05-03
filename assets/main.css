@@ -38,6 +38,7 @@ ul {
     list-style-type: square;
     list-style-position: inside;
     margin: auto;
+    padding: 0;
 }
 
 p, li {
