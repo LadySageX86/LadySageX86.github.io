@@ -33,6 +33,7 @@ body {
 img {
     border: 1px solid #00800080;
     border-radius: 12.5px;
+    margin: auto;
     margin-bottom: 0.25em;
 }
 
