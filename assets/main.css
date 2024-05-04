@@ -128,3 +128,12 @@ button:hover {
     flex-direction: column;
     margin: auto;
 }
+
+.mobile-controls {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: auto;
+    margin-top: 1em;
+    width: 80%;
+}

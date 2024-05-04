@@ -6,8 +6,43 @@ const vs_window = document.getElementById("vimshot-window");
 const vs_canvas = document.getElementById("vimshot-game")
 const vs_ctx = vs_canvas.getContext("2d");
 vs_ctx.font = "32px VT323";
-
 let vs_open = false;
+
+const vs_mobile_controls = {
+    h: document.getElementById('vimshot-h'),
+    j: document.getElementById('vimshot-j'),
+    k: document.getElementById('vimshot-k'),
+    l: document.getElementById('vimshot-l'),
+}
+
+vs_mobile_controls.h.addEventListener("click", e => {
+    if (!vs_open) return;
+    if (vs_shot_timer == 0) {
+        vs_player.input('h')
+        vs_shot_timer = vs_shot_timer_max;
+    }
+})
+vs_mobile_controls.j.addEventListener("click", e => {
+    if (!vs_open) return;
+    if (vs_shot_timer == 0) {
+        vs_player.input('j')
+        vs_shot_timer = vs_shot_timer_max;
+    }
+})
+vs_mobile_controls.k.addEventListener("click", e => {
+    if (!vs_open) return;
+    if (vs_shot_timer == 0) {
+        vs_player.input('k')
+        vs_shot_timer = vs_shot_timer_max;
+    }
+})
+vs_mobile_controls.l.addEventListener("click", e => {
+    if (!vs_open) return;
+    if (vs_shot_timer == 0) {
+        vs_player.input('l')
+        vs_shot_timer = vs_shot_timer_max;
+    }
+})
 
 vs_button.addEventListener("click", e => {
     vs_dialog.showModal();
