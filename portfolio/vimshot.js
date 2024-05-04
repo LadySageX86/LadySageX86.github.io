@@ -1,4 +1,4 @@
-// Personal High Score: 77
+// Personal High Score: 89
 
 const vs_button = document.getElementById("vimshot");
 const vs_dialog = document.getElementById("vimshot-dialog");
@@ -60,9 +60,9 @@ vs_window.addEventListener("click", e => {
 
 const vs_aabb = (a, b) => (a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y);
 
-const vs_bullet_speed = 7;
+const vs_bullet_speed = 10;
 let vs_shot_timer = 0;
-const vs_shot_timer_max = 30;
+const vs_shot_timer_max = 15;
 function vs_init_bullet(dx, dy) {
     return {
         x: 320-4,
