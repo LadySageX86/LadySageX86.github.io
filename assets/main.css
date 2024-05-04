@@ -30,6 +30,12 @@ body {
     background: radial-gradient(#00800030, #00800020);
 }
 
+img {
+    border: 1px solid #00800080;
+    border-radius: 12.5px;
+    margin-bottom: 0.25em;
+}
+
 a {
     color: green;
 }
@@ -69,7 +75,7 @@ dialog {
     margin: auto;
 }
 
-#dialog-window {
+.dialog-window {
     background: radial-gradient(#00800030, #00800020);
     color: green;
     padding: 2em;
@@ -106,5 +112,19 @@ button:hover {
 
 .work-details {
     margin-top: 1em;
+    margin: auto;
+}
+
+.portfolio-showcase {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 0.5em;
+}
+
+.portfolio-item {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
     margin: auto;
 }
