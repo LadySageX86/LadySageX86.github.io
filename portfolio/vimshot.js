@@ -3,40 +3,42 @@
 const vs_main = engine.init("vimshot");
 engine.setup_window(vs_main);
 
-const vs_mobile_controls = {
+const vs_osctrl = {
     h: document.getElementById('vimshot-h'),
     j: document.getElementById('vimshot-j'),
     k: document.getElementById('vimshot-k'),
     l: document.getElementById('vimshot-l'),
 }
 
-vs_mobile_controls.h.addEventListener("click", e => {
-    if (!vs_main.open) return;
-    if (vs_shot_timer == 0) {
-        vs_player.input('h')
-        vs_shot_timer = vs_shot_timer_max;
-    }
-})
-vs_mobile_controls.j.addEventListener("click", e => {
-    if (!vs_main.open) return;
-    if (vs_shot_timer == 0) {
-        vs_player.input('j')
-        vs_shot_timer = vs_shot_timer_max;
-    }
-})
-vs_mobile_controls.k.addEventListener("click", e => {
-    if (!vs_main.open) return;
-    if (vs_shot_timer == 0) {
-        vs_player.input('k')
-        vs_shot_timer = vs_shot_timer_max;
-    }
-})
-vs_mobile_controls.l.addEventListener("click", e => {
-    if (!vs_main.open) return;
-    if (vs_shot_timer == 0) {
-        vs_player.input('l')
-        vs_shot_timer = vs_shot_timer_max;
-    }
+engine.OSCTRL_DOWN.forEach(e_type => {
+    vs_osctrl.h.addEventListener(e_type, e => {
+        if (!vs_main.open) return;
+        if (vs_shot_timer == 0) {
+            vs_player.input('h')
+            vs_shot_timer = vs_shot_timer_max;
+        }
+    })
+    vs_osctrl.j.addEventListener(e_type, e => {
+        if (!vs_main.open) return;
+        if (vs_shot_timer == 0) {
+            vs_player.input('j')
+            vs_shot_timer = vs_shot_timer_max;
+        }
+    })
+    vs_osctrl.k.addEventListener(e_type, e => {
+        if (!vs_main.open) return;
+        if (vs_shot_timer == 0) {
+            vs_player.input('k')
+            vs_shot_timer = vs_shot_timer_max;
+        }
+    })
+    vs_osctrl.l.addEventListener(e_type, e => {
+        if (!vs_main.open) return;
+        if (vs_shot_timer == 0) {
+            vs_player.input('l')
+            vs_shot_timer = vs_shot_timer_max;
+        }
+    })
 })
 
 const vs_bullet_speed = 10;

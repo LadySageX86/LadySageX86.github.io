@@ -3,6 +3,8 @@ const engine = {
     SCREEN_WIDTH: 640,
     SCREEN_HEIGHT: 480,
     TICK: 16,
+    OSCTRL_DOWN: ['mousedown', 'touchstart'],
+    OSCTRL_UP: ['mouseup', 'touchend'],
     // engine initialization
     init: (gameId) => {
         const btn = document.getElementById(gameId);

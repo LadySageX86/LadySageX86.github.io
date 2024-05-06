@@ -4,6 +4,40 @@ engine.setup_window(ff_main);
 let ff_timer = 90;
 let ff_tick = 0;
 
+const ff_osctrl = {
+    left: document.getElementById('furious-left'),
+    right: document.getElementById('furious-right'),
+    punch: document.getElementById('furious-punch'),
+}
+
+engine.OSCTRL_DOWN.forEach((e_type) => {
+    ff_osctrl.left.addEventListener(e_type, e => {
+        if (!ff_main.open || ff_player.hitstun > 0) return;
+        ff_player.dx_l = -5;
+        ff_player.facingRight = false;
+    });
+    ff_osctrl.right.addEventListener(e_type, e => {
+        if (!ff_main.open || ff_player.hitstun > 0) return;
+        ff_player.dx_r = 5;
+        ff_player.facingRight = true;
+    });
+    ff_osctrl.punch.addEventListener(e_type, e => {
+        if (!ff_main.open || ff_player.hitstun > 0) return;
+        ff_player.fist = ff_player.punch(16, 5);
+    });
+});
+engine.OSCTRL_UP.forEach((e_type) => {
+    ff_osctrl.left.addEventListener(e_type, e => {
+        if (!ff_main.open) return;
+        ff_player.dx_l = 0;
+    });
+    ff_osctrl.right.addEventListener(e_type, e => {
+        if (!ff_main.open) return;
+        ff_player.dx_r = 0;
+    });
+});
+
+
 function ff_init_fighter(x) {
     return {
         x,

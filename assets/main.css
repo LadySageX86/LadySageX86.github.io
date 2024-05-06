@@ -90,6 +90,7 @@ button {
     border-radius: 12.5px;
     font-family: VT323;
     font-size: 1.5em;
+    font-variant-ligatures: none;
     margin: auto;
 }
 
