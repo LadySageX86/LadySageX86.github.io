@@ -121,6 +121,7 @@ button:hover {
     flex-direction: row;
     margin: auto;
     margin-top: 0.5em;
+    gap: 2em;
 }
 
 .portfolio-item {
