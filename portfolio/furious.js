@@ -172,7 +172,7 @@ setInterval(() => {
     ff_player.update(ff_enemy);
     ff_enemyAI();
     ff_enemy.update(ff_player);
-}, engine.TICK)
+}, engine.FPS)
 
 setInterval(() => {
     if (!ff_main.open) return;
@@ -183,4 +183,4 @@ setInterval(() => {
     ff_player.draw();
     ff_enemy.draw();
     ff_draw_health_bars();
-}, engine.TICK)
+}, engine.FPS)

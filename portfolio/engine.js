@@ -2,7 +2,7 @@ const engine = {
     // constants
     SCREEN_WIDTH: 640,
     SCREEN_HEIGHT: 480,
-    TICK: 16,
+    FPS: 1000/60,
     OSCTRL_DOWN: ['mousedown', 'touchstart'],
     OSCTRL_UP: ['mouseup', 'touchend'],
     // engine initialization

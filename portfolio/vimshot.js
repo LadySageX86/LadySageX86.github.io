@@ -186,7 +186,7 @@ setInterval(() => {
     });
 
     vs_player.update();
-}, engine.TICK)
+}, engine.FPS)
 
 setInterval(() => {
     if (!vs_main.open) return;
@@ -197,4 +197,4 @@ setInterval(() => {
     vs_enemies.forEach(enemy => enemy.draw());
     vs_main.ctx.fillText(`Score: ${vs_player.score}`, 32, 32);
     vs_main.ctx.fillText(`Lives: ${vs_player.lives}`, 512, 32);
-}, engine.TICK)
+}, engine.FPS)
