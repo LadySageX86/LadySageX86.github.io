@@ -23,7 +23,7 @@ engine.OSCTRL_DOWN.forEach((e_type) => {
     });
     ff_osctrl.punch.addEventListener(e_type, e => {
         if (!ff_main.open || ff_player.hitstun > 0) return;
-        ff_player.fist = ff_player.punch(16, 5);
+        ff_player.fist = ff_player.punch(8, 5, 16);
     });
 });
 engine.OSCTRL_UP.forEach((e_type) => {
@@ -53,13 +53,12 @@ function ff_init_fighter(x) {
         max_hp: 100,
         hitstun: 0,
         fist: null,
-        punch: function(duration, damage) {
-            const x = this.facingRight ? this.x + this.w : this.x - 16;
+        punch: function(duration, damage, knockback) {
             return {
-                x,
+                x: this.facingRight ? this.x + this.w : this.x - 24,
                 y: this.y + 32,
-                w: 16,
-                h: 16,
+                w: 24,
+                h: 24,
                 active: duration,
                 draw: function() {
                     if (this.active > 0)
@@ -69,7 +68,8 @@ function ff_init_fighter(x) {
                     if (this.active > 0) {
                         if (!enemy.hitstun && engine.aabb(this, enemy)) {
                             enemy.hp -= damage;
-                            enemy.hitstun = 32;
+                            enemy.hitstun = duration * 1.5;
+                            enemy.x += enemy.facingRight ? -knockback : knockback;
                         }
                         this.active--;
                     }
@@ -79,7 +79,15 @@ function ff_init_fighter(x) {
             }
         },
         draw: function() { 
-            engine.draw(ff_main.ctx, this); 
+            if (this.hp > 0)
+                engine.draw(ff_main.ctx, this); 
+            else
+                engine.draw(ff_main.ctx, {
+                        x: this.x,
+                        y: this.y + this.h/2,
+                        w: this.h,
+                        h: this.w
+                    }, "#008000AA");
             if (this.fist)
                 this.fist.draw();
         },
@@ -121,11 +129,11 @@ function ff_enemyAI() {
             ff_enemy.dx_l = 0;
         }
     } else {
-        if (Math.abs(ff_player.x + ff_player.w - ff_enemy.x) < 8 ) {
-            ff_enemy.fist = ff_enemy.punch(16, 5);
+        if (Math.abs(ff_player.x + ff_player.w - ff_enemy.x) < Math.ceil(Math.random() * (24 - 15) + 15)) {
+            ff_enemy.fist = ff_enemy.punch(8, 5, 16);
         }
-        if (Math.abs(ff_enemy.x + ff_enemy.w - ff_player.x) < 8) {
-            ff_enemy.fist = ff_enemy.punch(16, 5);
+        if (Math.abs(ff_enemy.x + ff_enemy.w - ff_player.x) < Math.ceil(Math.random() * (24 - 15) + 15)) {
+            ff_enemy.fist = ff_enemy.punch(8, 5, 16);
         }
         if (ff_player.x + ff_player.w + 8 < ff_enemy.x) {
             ff_enemy.dx_l = -5;
@@ -155,7 +163,7 @@ const ff_keydown = (e) => {
             ff_player.facingRight = false;
         }
         if (e.code == "Space")
-            ff_player.fist = ff_player.punch(16, 5);
+            ff_player.fist = ff_player.punch(8, 5, 16);
     }
 }
 const ff_keyup = (e) => {
@@ -167,7 +175,7 @@ const ff_keyup = (e) => {
 engine.kb_ctrl(ff_main, ff_keydown, ff_keyup);
 
 setInterval(() => {
-    if (!ff_main.open || ff_timer < 0) return;
+    if (!ff_main.open || ff_timer < 0 || ff_player.hp <= 0 || ff_enemy.hp <= 0) return;
     if (ff_tick++ % 60 == 0) ff_timer--;
     ff_player.update(ff_enemy);
     ff_enemyAI();
@@ -176,11 +184,11 @@ setInterval(() => {
 
 setInterval(() => {
     if (!ff_main.open) return;
-    if (ff_timer < 0 || ff_player.hp <= 0 || ff_enemy.hp <= 0) return engine.gameOver(ff_main.ctx);
     engine.bg(ff_main.ctx);
     ff_main.ctx.fillStyle = "#008000FF";
     ff_main.ctx.fillText(ff_timer, engine.SCREEN_WIDTH / 2 - 16, 56);
     ff_player.draw();
     ff_enemy.draw();
     ff_draw_health_bars();
+    if (ff_timer < 0 || ff_player.hp <= 0 || ff_enemy.hp <= 0) return engine.gameOver(ff_main.ctx);
 }, engine.FPS)
