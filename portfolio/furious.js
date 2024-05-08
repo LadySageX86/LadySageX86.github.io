@@ -68,7 +68,7 @@ function ff_init_fighter(x) {
                     if (this.active > 0) {
                         if (!enemy.hitstun && engine.aabb(this, enemy)) {
                             enemy.hp -= damage;
-                            enemy.hitstun = duration * 1.5;
+                            enemy.hitstun = duration * 2;
                             enemy.x += enemy.facingRight ? -knockback : knockback;
                         }
                         this.active--;
