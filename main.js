@@ -1,8 +1,9 @@
-const footer = document.getElementById('footer-text');
+const test_url = "https://catfact.ninja"
+const test_api = `${test_url}/fact`;
 const date = new Date();
-footer.innerHTML = `Copyright &copy; ${date.getFullYear()} S.W. Smith. Random cat facts courtesy of <a href='https://catfact.ninja'>catfact.ninja</a>.`;
 
-const test_api = "https://catfact.ninja/fact";
+const footer = document.getElementById('footer-text');
+footer.innerHTML = `Copyright &copy; ${date.getFullYear()} S.W. Smith. Random cat facts courtesy of <a href='${test_url}'>catfact.ninja</a>.`;
 
 document.addEventListener("DOMContentLoaded", async () => {
     await fetch(test_api, {
