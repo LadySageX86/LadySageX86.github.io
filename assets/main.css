@@ -8,6 +8,18 @@
     src: url('fonts/VT323-Regular.ttf');
 }
 
+@keyframes formglow {
+    0% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0)); }
+    25% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.25)); }
+    50% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.50)); }
+    75% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.75)); }
+    100% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,1)); }
+}
+
+a {
+    color: green;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -19,23 +31,38 @@ body {
     font-variant-ligatures: none;
 }
 
-.digital {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border-radius: 12.5px;
+button {
     background: radial-gradient(#00800030, #00800020);
+    color: green;
+    border-color: #00800080;
+    border-radius: 12.5px;
+    font-family: VT323;
+    font-size: 1.5em;
+    font-variant-ligatures: none;
+    margin: auto;
 }
 
-@keyframes formglow {
-    0% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0)); }
-    25% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.25)); }
-    50% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.50)); }
-    75% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.75)); }
-    100% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,1)); }
+button:hover {
+    background: radial-gradient(#00800030, #00800040);
+}
+
+dialog {
+    background-color: black;
+    padding: 0%;
+    margin: auto;
+}
+
+h1, h2, h3, h4 {
+    margin: auto;
+    font-family: RubikMono;
+    font-variant: small-caps;
+}
+
+img {
+    border: 1px solid #00800080;
+    border-radius: 12.5px;
+    margin: auto;
+    margin-bottom: 0.25em;
 }
 
 input {
@@ -57,15 +84,10 @@ input:focus {
     outline: transparent;
 }
 
-img {
-    border: 1px solid #00800080;
-    border-radius: 12.5px;
+li, p {
+    font-size: 1.25em;
     margin: auto;
-    margin-bottom: 0.25em;
-}
-
-a {
-    color: green;
+    margin-bottom: 1em;
 }
 
 ul {
@@ -75,33 +97,6 @@ ul {
     padding: 0;
 }
 
-p, li {
-    font-size: 1.25em;
-    margin: auto;
-    margin-bottom: 1em;
-}
-
-h1, h2, h3, h4 {
-    margin: auto;
-    font-family: RubikMono;
-    font-variant: small-caps;
-}
-
-#navbar {
-    flex-direction: row;
-    margin: auto;
-}
-
-.navlink {
-    margin: 1em;
-    font-size: 1.5em;
-}
-
-dialog {
-    background-color: black;
-    padding: 0%;
-    margin: auto;
-}
 
 .dialog-window {
     background: radial-gradient(#00800030, #00800020);
@@ -110,37 +105,35 @@ dialog {
     border-radius: 12.5px;
 }
 
-button {
-    background: radial-gradient(#00800030, #00800020);
-    color: green;
-    border-color: #00800080;
-    border-radius: 12.5px;
-    font-family: VT323;
-    font-size: 1.5em;
-    font-variant-ligatures: none;
-    margin: auto;
-}
-
-button:hover {
-    background: radial-gradient(#00800030, #00800040);
-}
-
-#reveal {
+.digital {
+    display: flex;
+    flex-direction: column;
     width: 80%;
+    margin: auto;
     margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 12.5px;
+    background: radial-gradient(#00800030, #00800020);
 }
 
-.work-header {
-    width: 100%;
+.mobile-controls {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 0;
     margin: auto;
-    margin-bottom: 1em;
+    margin-top: 1em;
+    width: 80%;
 }
 
-.work-details {
-    margin-top: 1em;
+.navlink {
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+.portfolio-item {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
     margin: auto;
 }
 
@@ -152,18 +145,26 @@ button:hover {
     gap: 2em;
 }
 
-.portfolio-item {
-    padding: 0.5em;
-    display: flex;
-    flex-direction: column;
+.work-details {
+    margin-top: 1em;
     margin: auto;
 }
 
-.mobile-controls {
+.work-header {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    padding: 0;
+    justify-content: space-between;
     margin: auto;
-    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#navbar {
+    flex-direction: row;
+    margin: auto;
+}
+
+#reveal {
     width: 80%;
+    margin-bottom: 1em;
 }
