@@ -16,10 +16,10 @@
         </header>
         <div class="digital">
             <h2>Games</h2>
-            <script src="engine.js"></script>
+            <script src="games/engine.js"></script>
             <div class="portfolio-showcase">
                 <button class="portfolio-item" id="vimshot">
-                    <img src="vimshot-screen.png" />
+                    <img src="games/vimshot-screen.png" />
                     <h3>Vimshot</h3>
                     Use Vim motions to defend your tower!
                 </button>
@@ -36,9 +36,9 @@
                         </div>
                     </div>
                 </dialog>
-                <script src="vimshot.js"></script>
+                <script src="games/vimshot.js"></script>
                 <button class="portfolio-item" id="furious">
-                    <img src="furious-screen.png" />
+                    <img src="games/furious-screen.png" />
                     <h3>Furious Fists</h3>
                     Arcade fighting action!
                 </button>
@@ -54,8 +54,31 @@
                         </div>
                     </div>
                 </dialog>
-                <script src="furious.js"></script>
+                <script src="games/furious.js"></script>
             </div>
+        </div>
+        <div class="digital">
+            <h2>Apps</h2>
+            <button class="portfolio-item" id="gross-pay">
+                <img src="apps/grosspay-screen.png" />
+                <h3>Gross Pay Calc</h3>
+            </button>
+            <dialog id ="gross-pay-dialog">
+                <div id="gross-pay-window" class="dialog-window">
+                    <div>
+                        <p id="gross-pay-date">Today's Date: </p>
+                    </div>
+                    <div>
+                        <input id="gross-pay-hrs" placeholder="Hours" />
+                        <input id="gross-pay-wage" placeholder="Wage" />
+                        <input id="gross-pay-vac" placeholder="Vacation (%)"/>
+                    </div>
+                    <div>
+                        <p id="gross-pay-total"></p>
+                    </div>
+                </div>
+            </dialog>
+            <script src="apps/grosspay.js" />
         </div>
         <footer>
             <p id="footer-text">
