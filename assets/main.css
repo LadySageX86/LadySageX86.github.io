@@ -10,10 +10,10 @@
 
 @keyframes formglow {
     0% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0)); }
-    25% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.125)); }
-    50% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.250)); }
-    75% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.375)); }
-    100% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.5)); }
+    25% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.25)); }
+    50% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.50)); }
+    75% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,0.75)); }
+    100% { filter: drop-shadow(0px 1px 4px rgba(0,128,0,1)); }
 }
 
 @keyframes windowglow {
@@ -75,7 +75,7 @@ img {
 
 input {
     background: linear-gradient(#00800030, #00800020);
-    border-color: #00800080;
+    border-color: #00800040;
     border-radius: 12.5px;
     color: #008000;
     font-family: VT323;
@@ -84,11 +84,11 @@ input {
 
 input:focus {
     animation-name: formglow;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    border: 3px solid #008000A0;
+    border: 3px solid #00800080;
     outline: transparent;
 }
 
