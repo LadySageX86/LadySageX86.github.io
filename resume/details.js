@@ -2,9 +2,18 @@ let revealed = false;
 
 const revealButton = document.getElementById("reveal");
 const dialog = document.getElementById('reveal-test');
+const dialog_window = document.getElementById('reveal-window')
 
 revealButton.addEventListener("click", e => {
     dialog.showModal();
+})
+
+dialog.addEventListener("click", e => {
+    dialog.close();
+})
+
+dialog_window.addEventListener("click", e => {
+    e.stopPropagation();
 })
 
 const confirm = e => {
@@ -38,7 +47,7 @@ const rejectHumanity = e => {
     dialog.close();
 }
 
-const confirm_button = document.getElementById("confirm");
+const confirm_button = document.getElementById("confirmHumanity");
 confirm_button.addEventListener("click", confirm);
 
 const rejectHumanity_button = document.getElementById("rejectHumanity");
