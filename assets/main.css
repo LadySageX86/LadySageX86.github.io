@@ -84,6 +84,10 @@ input:focus {
     outline: transparent;
 }
 
+label {
+    font-size: 2em;
+}
+
 li, p {
     font-size: 1.25em;
     margin: auto;
@@ -97,7 +101,10 @@ ul {
     padding: 0;
 }
 
-
+.dialog-input {
+    margin: auto;
+    margin-top: 1em;
+}
 .dialog-window {
     background: radial-gradient(#00800030, #00800020);
     color: green;

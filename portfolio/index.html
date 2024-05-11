@@ -61,17 +61,22 @@
             <h2>Apps</h2>
             <button class="portfolio-item" id="gross-pay">
                 <img src="apps/grosspay-screen.png" />
-                <h3>Gross Pay Calc</h3>
+                <h3>Gross Calculator</h3>
+                Figure out your weekly earnings!
             </button>
             <dialog id ="gross-pay-dialog">
                 <div id="gross-pay-window" class="dialog-window">
                     <div>
                         <p id="gross-pay-date">Today's Date: </p>
                     </div>
-                    <div>
-                        <input id="gross-pay-hrs" placeholder="Hours" />
-                        <input id="gross-pay-wage" placeholder="Wage" />
-                        <input id="gross-pay-vac" placeholder="Vacation (%)"/>
+                    <div class="dialog-input">
+                        <label>Hours: </label><input id="gross-pay-hrs" placeholder="0" />
+                    </div>
+                    <div class="dialog-input">
+                        <label>Wages: </label><input id="gross-pay-wage" placeholder="0" />
+                    </div>
+                    <div class="dialog-input">
+                        <label>Vac %: </label><input id="gross-pay-vac" placeholder="0"/>
                     </div>
                     <div>
                         <p id="gross-pay-total"></p>
