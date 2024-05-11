@@ -41,6 +41,7 @@ body {
 input {
     background: linear-gradient(#00800030, #00800020);
     border-color: #00800080;
+    border-radius: 12.5px;
     color: #008000;
     font-family: VT323;
     font-size: 2em;
@@ -52,8 +53,8 @@ input:focus {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    border: 1px solid #00800080;
-    outline: 1px solid #008000A0;
+    border: 3px solid #008000A0;
+    outline: transparent;
 }
 
 img {
