@@ -111,7 +111,7 @@ ul {
 
 .dialog-input {
     margin: auto;
-    margin-top: 1em;
+    margin-bottom: 1em;
 }
 .dialog-window {
     animation-name: windowglow;

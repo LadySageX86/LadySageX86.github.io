@@ -27,20 +27,20 @@ const gcp_calc_gross = (h, w, v) => parseFloat(h) * parseFloat(w) * (1 + parseFl
 gcp_hrs_input.addEventListener("input", e => {
     if (Number.isNaN(parseInt(e.target.value))) return;
     const gross = gcp_calc_gross(e.target.value, gcp_wage_input.value, gcp_vac_input.value);
-    console.log(`VALUES: \n${e.target.value}\n${gcp_wage_input.value}\n${gcp_vac_input}`);
-    gcp_total.innerText = `Your gross pay for the week is $${Number.isNaN(gross) ? 0 : gross.toFixed(2)}`;
+    if (Number.isNaN(gross)) return;
+    gcp_total.innerText = `Your gross pay for the week is $${gross.toFixed(2)}`;
 })
 
 gcp_wage_input.addEventListener("input", e => {
     if (Number.isNaN(parseInt(e.target.value))) return;
     const gross = gcp_calc_gross(gcp_hrs_input.value, e.target.value, gcp_vac_input.value);
-    console.log(`VALUES: \n${e.target.value}\n${gcp_hrs_input.value}\n${gcp_vac_input}`);
-    gcp_total.innerText = `Your gross pay for the week is $${Number.isNaN(gross) ? 0 : gross.toFixed(2)}`;
+    if (Number.isNaN(gross)) return;
+    gcp_total.innerText = `Your gross pay for the week is $${gross.toFixed(2)}`;
 })
 
 gcp_vac_input.addEventListener("input", e => {
     if (Number.isNaN(parseInt(e.target.value))) return;
     const gross = gcp_calc_gross(gcp_hrs_input.value, gcp_wage_input.value, e.target.value);
-    console.log(`VALUES: \n${e.target.value}\n${gcp_hrs_input.value}\n${gcp_wage_input}`);
-    gcp_total.innerText = `Your gross pay for the week is $${Number.isNaN(gross) ? 0 : gross.toFixed(2)}`;
+    if (Number.isNaN(gross)) return;
+    gcp_total.innerText = `Your gross pay for the week is $${gross.toFixed(2)}`;
 })
