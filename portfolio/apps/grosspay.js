@@ -13,7 +13,7 @@ gcp_win.addEventListener("click", e => {
 })
 
 const gcp_date = new Date();
-const gcp_date_string = `${gcp_date.getUTCFullYear()}-${gcp_date.getMonth() + 1}-${gcp_date.getUTCDate()}`;
+const gcp_date_string = `${gcp_date.getFullYear()}-${gcp_date.getMonth() + 1}-${gcp_date.getDate()}`;
 const gcp_date_elem = document.getElementById("gross-pay-date");
 gcp_date_elem.innerText += gcp_date_string;
 
