@@ -109,6 +109,18 @@ ul {
     padding: 0;
 }
 
+.blog-post {
+    margin: auto;
+    margin-top: 1em;
+}
+.blog-toc {
+    text-align: left;
+    list-style-type: upper-roman;
+    margin: auto;
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
 .dialog-input {
     margin: auto;
     margin-bottom: 1em;
