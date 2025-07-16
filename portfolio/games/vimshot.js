@@ -53,7 +53,7 @@ function vs_init_bullet(dx, dy) {
         dx: dx,
         dy: dy,
         draw: function() {
-            engine.draw(vs_main.ctx, this);
+            engine.draw(vs_main.ctx, this, "#008080FF");
         },
         update: function() {
             engine.move(this)
@@ -73,7 +73,7 @@ function vs_init_enemy(x, y, dx, dy) {
         dx: dx,
         dy: dy,
         draw: function() {
-            engine.draw(vs_main.ctx, this);
+            engine.draw(vs_main.ctx, this, "#800080FF");
         }, 
         update: function() {
             engine.move(this);
@@ -90,7 +90,7 @@ const vs_player = {
     score: 0,
     lives: 3,
     draw: function () {
-        engine.draw(vs_main.ctx, this);
+        engine.draw(vs_main.ctx, this, "#008080FF");
         this.bullets.forEach(bullet => {
             bullet.draw();
         })
@@ -195,6 +195,7 @@ setInterval(() => {
         return engine.gameOver(vs_main.ctx);
     vs_player.draw();
     vs_enemies.forEach(enemy => enemy.draw());
+    vs_main.ctx.fillStyle = "#008080FF";
     vs_main.ctx.fillText(`Score: ${vs_player.score}`, 32, 32);
     vs_main.ctx.fillText(`Lives: ${vs_player.lives}`, 512, 32);
 }, engine.FPS)

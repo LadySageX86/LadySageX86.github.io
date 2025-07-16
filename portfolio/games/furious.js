@@ -60,9 +60,9 @@ function ff_init_fighter(x) {
                 w: 24,
                 h: 24,
                 active: duration,
-                draw: function() {
+                draw: function(color) {
                     if (this.active > 0)
-                        engine.draw(ff_main.ctx, this)
+                        engine.draw(ff_main.ctx, this, color)
                 },
                 update: function(self, enemy) {
                     if (this.active > 0) {
@@ -78,18 +78,18 @@ function ff_init_fighter(x) {
                 }
             }
         },
-        draw: function() { 
+        draw: function(color) { 
             if (this.hp > 0)
-                engine.draw(ff_main.ctx, this); 
+                engine.draw(ff_main.ctx, this, color.active); 
             else
                 engine.draw(ff_main.ctx, {
                         x: this.x,
                         y: this.y + this.h/2,
                         w: this.h,
                         h: this.w
-                    }, "#008000AA");
+                    }, color.inactive);
             if (this.fist)
-                this.fist.draw();
+                this.fist.draw(color.active);
         },
         update: function(enemy) { 
             if (this.hitstun > 0) this.hitstun--;
@@ -107,14 +107,14 @@ const ff_enemy = ff_init_fighter(engine.SCREEN_WIDTH - engine.SCREEN_WIDTH / 6 -
 
 function ff_draw_health_bars() {
     // p1
-    ff_main.ctx.fillStyle = "#00800080";
+    ff_main.ctx.fillStyle = "#00808080";
     ff_main.ctx.fillRect(32, 32, ff_player.max_hp * 2, 32);
-    ff_main.ctx.fillStyle = "#008000FF";
+    ff_main.ctx.fillStyle = "#008080FF";
     ff_main.ctx.fillRect(32, 32, ff_player.hp * 2, 32)
     // p2
-    ff_main.ctx.fillStyle = "#00800080";
+    ff_main.ctx.fillStyle = "#80008080";
     ff_main.ctx.fillRect(engine.SCREEN_WIDTH - ff_enemy.max_hp * 2 - 32, 32, ff_enemy.max_hp * 2, 32);
-    ff_main.ctx.fillStyle = "#008000FF";
+    ff_main.ctx.fillStyle = "#800080FF";
     ff_main.ctx.fillRect(engine.SCREEN_WIDTH - ff_enemy.max_hp * 2- 32, 32, ff_enemy.hp * 2, 32)
 }
 
@@ -185,10 +185,10 @@ setInterval(() => {
 setInterval(() => {
     if (!ff_main.open) return;
     engine.bg(ff_main.ctx);
-    ff_main.ctx.fillStyle = "#008000FF";
+    ff_main.ctx.fillStyle = "#e6e6e6FF";
     ff_main.ctx.fillText(ff_timer, engine.SCREEN_WIDTH / 2 - 16, 56);
-    ff_player.draw();
-    ff_enemy.draw();
+    ff_player.draw({ active: "#008080FF", inactive: "#008080AA" });
+    ff_enemy.draw({ active: "#800080FF", inactive: "#800080AA" });
     ff_draw_health_bars();
     if (ff_timer < 0 || ff_player.hp <= 0 || ff_enemy.hp <= 0) return engine.gameOver(ff_main.ctx);
 }, engine.FPS)

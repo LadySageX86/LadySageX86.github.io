@@ -48,15 +48,15 @@ const engine = {
     // graphics
     bg: (ctx) => {
         ctx.clearRect(0, 0, 640, 480);
-        ctx.fillStyle = "#00800030";
+        ctx.fillStyle = "#80008030";
         ctx.fillRect(0, 0, 640, 480);
     },
-    draw: (ctx, obj, color="#008000FF") => {
+    draw: (ctx, obj, color="#800080FF") => {
         ctx.fillStyle = color;
         ctx.fillRect(obj.x, obj.y, obj.w, obj.h);
     },
     gameOver: (ctx) => {
-        ctx.fillStyle = "#008000FF";
+        ctx.fillStyle = "#800000FF";
         ctx.fillText("GAME OVER!", 320-64, 240);
     },
     // common functionality
