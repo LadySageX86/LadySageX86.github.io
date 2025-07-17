@@ -21,7 +21,7 @@ const confirm = e => {
         location.innerText = "Fredericton, NB";
 
         const mailto = "mailto:";
-        const address = "spencerwayne310";
+        const address = "sagemistressmods";
         const at = String.fromCharCode(64);
         const provider = "gmail.com";
 
